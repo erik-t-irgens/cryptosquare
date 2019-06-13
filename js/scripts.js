@@ -29,9 +29,9 @@ $(document).ready(function() {
                 squareSize = index;
             }
             
-            var finalArray = [];
             var endResult = "";
             var rows = [];
+            var finalResult = ""
 
             for (var index = 0; index < messageLength; index += squareSize) {
                 rows.push(messageCharacters.slice(index, index + squareSize));
@@ -43,7 +43,16 @@ $(document).ready(function() {
                 }
             }
             console.log(endResult);
+            // for (var index = 0; index < endResult.length; index++) {
+
+            // }
+
+            // add a space every 5 characters with regex would be like this: 
+            finalResult = endResult.replace(/(.{5})/g,"$1 ");
+
+            $("#resultantPrint").append("<p>" + finalResult + "</p>");
         }
+
         
         
         
